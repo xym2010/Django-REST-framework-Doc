@@ -5,9 +5,8 @@
 > [Django REST framework][4] 是一个都能极大的提升开发效率的Django第三方工具，为了让更多的人能够快速的使用它，我希望将它翻译为中文版，One For All，All For One。  
 [点我看书][2]  
 本书源码在Github上维护，欢迎参与：[我要写书][3]  
-关于我:  
-    86021111@163.com    
-    www.xymlife.com   
+Email: 86021111@163.com      
+Blog: www.xymlife.com   
 
 
   [1]: http://7xq2as.com1.z0.glb.clouddn.com/logo.png
