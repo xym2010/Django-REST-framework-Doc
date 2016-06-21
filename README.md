@@ -1,3 +1,4 @@
+# 前言
 
 ![此处输入图片的描述][1]
   
@@ -7,7 +8,7 @@
 有什么问题都可以通过邮箱联系我：86021111@163.com  
 
 
-  [1]: http://www.tomchristie.com/rest-framework-2-docs/img/logo.png
+  [1]: http://7xq2as.com1.z0.glb.clouddn.com/logo.png
   [2]: https://xym2010.gitbooks.io/django-rest-framework-doc/content/
   [3]: https://github.com/xym2010/Django-REST-framework-Doc
   [4]: http://www.tomchristie.com/rest-framework-2-docs/
