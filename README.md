@@ -14,6 +14,6 @@ Github: [https://github.com/xym2010][6]
   [1]: http://7xq2as.com1.z0.glb.clouddn.com/logo.png
   [2]: https://xym2010.gitbooks.io/django-rest-framework-doc/content/
   [3]: https://github.com/xym2010/Django-REST-framework-Doc
-  [4]: http://www.tomchristie.com/rest-framework-2-docs/
+  [4]: http://www.django-rest-framework.org/
   [5]: http://www.xymlife.com
   [6]: https://github.com/xym2010
