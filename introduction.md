@@ -1,8 +1,15 @@
 # 简介 
 
+
 ![此处输入图片的描述][1]
 
-Django REST framework2是一个非常健壮和非常灵活的Django的第三方插件。使用它可以非常容易的实现Web APIs。  
+---  
+
+** 注意：这篇文档是基于Django REST framework 3的，但是它同样适用于Django REST framework 2 **  
+
+---
+  
+Django REST framework是一个非常健壮和非常灵活的Django的第三方插件。使用它可以非常容易的实现Web APIs。  
 它的这些功能应该能够吸引你。
 
 > - **Web browseable API** 非常强大，足以胜任你的所有开发需求。  
