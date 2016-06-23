@@ -46,7 +46,7 @@ urlpatterns = [
 ]
 ```
 
-**注意：这里的url路径可以是你自定义的，但是要保证include了rest_framework.urls 和使用rest_framework的namespace，如果你是Django1.9+，你可以省略namespace，因为REST framework会帮你设定。**
+> **注意：这里的url路径可以是你自定义的，但是要保证include了rest_framework.urls 和使用rest_framework的namespace，如果你是Django1.9+，你可以省略namespace，因为REST framework会帮你设定。**
 
 ## 实例 ##
 让我们看个使用REST framework搭建的实例。   
