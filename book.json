@@ -1,9 +1,70 @@
 {
-   "gitbook": "2.x.x",
-"   title": "Django REST framework 中文文档",
-"   description": "Django REST framework 中文文档",
-"   structure": {
-"       readme": "README.md",
-"       summary": "SUMMARY.md"
-   }
+    "gitbook" : "2.6.4",
+    "title": "Django REST framework 中文文档",
+    "author" : "xuyiming",
+    "description": "Django REST framework 中文文档",
+    "language": "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "源文档" : "http://www.django-rest-framework.org/"
+        }
+    },
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
+    },
+    "plugins": [
+        "-search",
+        "search-pro",
+        "github",
+        "ace",
+        "emphasize",
+        "tbfed-pagefooter",
+        "toggle-chapters",
+        "toc",
+        "donate",
+        "disqus"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "djangorestframework"
+        },
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord": ["Gitbook Use"]
+        },
+        "github": {
+            "url": "https://github.com/xym2010/"
+        },
+        "tbfed-pagefooter": {
+            "copyright":" Copyright &copy xym@2016",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        },
+        "donate": {
+            "wechat": "http://7xq2as.com1.z0.glb.clouddn.com/wechat_pay.JPG",
+            "alipay": "http://7xq2as.com1.z0.glb.clouddn.com/alipay15_15.png",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+        },
+        "sharing": {
+            "weibo": true,
+            "facebook": false,
+            "twitter": false,
+            "google": false,
+            "instapaper": false,
+            "vk": false,
+            "all": [
+                "facebook", "google", "twitter",
+                    "weibo", "instapaper"
+            ]
+        }
+    }
+
 }
