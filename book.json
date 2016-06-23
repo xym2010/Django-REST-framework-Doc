@@ -6,8 +6,7 @@
     "language": "zh-hans",
     "links" : {
         "sidebar" : {
-            "源文档" : "http://www.django-rest-framework.org/",
-            "关于我" : "http://www.xymlife.com"
+            "源文档" : "http://www.django-rest-framework.org/"
         }
     },
     "structure": {
@@ -50,7 +49,7 @@
             "wechat": "http://7xq2as.com1.z0.glb.clouddn.com/wechat_pay.JPG",
             "alipay": "http://7xq2as.com1.z0.glb.clouddn.com/alipay15_15.png",
             "title": "",
-            "button": "赏",
+            "button": "打赏",
             "alipayText": "支付宝打赏",
             "wechatText": "微信打赏"
         },
