@@ -6,7 +6,8 @@
     "language": "zh-hans",
     "links" : {
         "sidebar" : {
-            "源文档" : "http://www.django-rest-framework.org/"
+            "源文档" : "http://www.django-rest-framework.org/",
+            "关于我" : "http://www.xymlife.com"
         }
     },
     "structure": {
