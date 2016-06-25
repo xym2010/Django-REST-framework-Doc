@@ -71,8 +71,35 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 ```
 这里我们使用了HyperlinkedModelSerializer的超链接关系，我们也可以使用主键和其他不同的关系表示，但是超链接是一个很好的RESTful的设计。
 
+> 什么是超链接的设计呢？就是一个url对应一个服务器的资源。有兴趣的可以去看看《RESTful Web APIs》
+
 ### View
-待编辑
+
+接着添加view，编辑tutorial/quickstart/views.py加入以下代码
+
+```python
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+```
+
+这里把所有公共的方法(get, post, delete)都封装到了viewsets里面了，你可以很容易的把这些分离出来，全部写到view中，但是明显使用viewsets的代码更简洁明了。
 
 ### URLs
 待编辑
