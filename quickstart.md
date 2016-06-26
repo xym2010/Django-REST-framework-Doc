@@ -102,7 +102,28 @@ class GroupViewSet(viewsets.ModelViewSet):
 这里把所有公共的方法(get, post, delete)都封装到了viewsets里面了，你可以很容易的把这些分离出来，全部写到view中，但是明显使用viewsets的代码更简洁明了。
 
 ### URLs
-待编辑
+接着加入API URLs，编辑tutorial/urls.py文件如下：
+
+```python
+from django.conf.urls import url, include
+from rest_framework import routers
+from tutorial.quickstart import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+]
+```
+
+因为我们用了viewsets代替了views，所以只要简单的注册一下router对象就OK了。  
+同样，如果你需要更好掌控API URLs，你可以很容易的分离出来单独处理。  
+最后，我们引入login和logout的views，为了使用可视化的API界面，这些可视化操作有利于你验证API。
 
 ### 设置
 待编辑
