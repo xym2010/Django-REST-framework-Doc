@@ -47,6 +47,7 @@ python manage.py migrate
 ```python
 python manage.py createsuperuser
 ```
+> 以上安装的是Django和项目的初始化，记得还需要按照上一章的安装流程安装配置好REST framework。
 
 ### Serizlizers
 
@@ -99,7 +100,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
 ```
 
-这里把所有公共的方法(get, post, delete)都封装到了viewsets里面了，你可以很容易的把这些分离出来，全部写到view中，但是明显使用viewsets的代码更简洁明了。
+这里把所有公共的方法（get, post, delete）都封装到了viewsets里面了，你可以很容易的把这些分离出来，全部写到view中，但是明显使用viewsets的代码更简洁明了。
 
 ### URLs
 接着加入API URLs，编辑tutorial/urls.py文件如下：
@@ -123,7 +124,11 @@ urlpatterns = [
 
 因为我们用了viewsets代替了views，所以只要简单的注册一下router对象就OK了。  
 同样，如果你需要更好掌控API URLs，你可以很容易的分离出来单独处理。  
-最后，我们引入login和logout的views，为了使用可视化的API界面，这些可视化操作有利于你验证API。
+最后，为了正常的使用可视化的API界面，我们引入REST framework自带的login和logout的views（就是上面的api-auth），这些可视化操作有利于验证你的API。
+
+> 注意：这里的url路径可以是你自定义的，但是要保证include了rest_framework.urls
+> 和使用rest_framework的namespace，如果你是Django1.9+，你可以省略namespace，因为REST
+> framework会帮你设定。
 
 ### 设置
 待编辑
