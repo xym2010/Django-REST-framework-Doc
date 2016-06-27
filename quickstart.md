@@ -8,7 +8,7 @@
  * [Serizlizers](#serizlizers) 
  * [View](#view)
  * [URLs](#urls)
- * [设置](#设置)
+ * [Setting](#setting)
  * [测试](#测试)
 
 
@@ -126,12 +126,20 @@ urlpatterns = [
 同样，如果你需要更好掌控API URLs，你可以很容易的分离出来单独处理。  
 最后，为了正常的使用可视化的API界面，我们引入REST framework自带的login和logout的views（就是上面的api-auth），这些可视化操作有利于验证你的API。
 
-> 注意：这里的url路径可以是你自定义的，但是要保证include了rest_framework.urls
-> 和使用rest_framework的namespace，如果你是Django1.9+，你可以省略namespace，因为REST
-> framework会帮你设定。
+### setting
+接着添加必要的配置，在tutorial/settings.py中添加以下配置。
 
-### 设置
-待编辑
+```python
+INSTALLED_APPS = (
+     ...
+     'rest_framework',
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
+```
 
 ### 测试
 待编辑
