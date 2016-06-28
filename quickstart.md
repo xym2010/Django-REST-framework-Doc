@@ -4,15 +4,15 @@
 
 我们将创建一个简单的API去让管理员可以管理这个系统的用户和用户组。 
 
- * [项目安装](#项目安装)
+ * [Install](#install)
  * [Serizlizers](#serizlizers) 
  * [View](#view)
  * [URLs](#urls)
  * [Setting](#setting)
- * [测试](#测试)
+ * [Testing](#testing)
 
 
-### 项目安装 
+### Install
 创建一个新的Django项目叫做tutorial，接着开启一个新的app叫做quickstart。
 
 ```python
@@ -48,6 +48,21 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 > 以上安装的是Django和项目的初始化，记得还需要按照上一章的安装流程安装配置好REST framework。
+
+### Setting
+接着添加必要的配置，在tutorial/settings.py中添加以下配置。
+
+```python
+INSTALLED_APPS = (
+     ...
+     'rest_framework',
+)
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
+```
 
 ### Serizlizers
 
@@ -126,22 +141,69 @@ urlpatterns = [
 同样，如果你需要更好掌控API URLs，你可以很容易的分离出来单独处理。  
 最后，为了正常的使用可视化的API界面，我们引入REST framework自带的login和logout的views（就是上面的api-auth），这些可视化操作有利于验证你的API。
 
-### setting
-接着添加必要的配置，在tutorial/settings.py中添加以下配置。
+### Testing
+我们现在可以开始测试我们的API了，先启动项目。
 
 ```python
-INSTALLED_APPS = (
-     ...
-     'rest_framework',
-)
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-    'PAGE_SIZE': 10
-}
+python manage.py runserver
 ```
 
-### 测试
-待编辑
+** curl访问 **
+
+```python
+bash: curl -H 'Accept: application/json; indent=4' -u xuyiming:password123 http://127.0.0.1:8000/users/
+[
+    {
+        "url": "http://127.0.0.1:8000/users/2/",
+        "username": "admin",
+        "email": "admin@163.com",
+        "groups": []
+    },
+    {
+        "url": "http://127.0.0.1:8000/users/1/",
+        "username": "xuyiming",
+        "email": "86021111@163.com",
+        "groups": []
+    }
+]
+
+```
+> curl -H 是添加请求头参数，-u 是输入页面的验证账号和密码，注意这里要把xuyiming:password123 改成你之前创建的管理员的账号和密码。
+
+** 使用httpie 工具访问 **
+
+```python
+bash: http -a admin:password123 http://127.0.0.1:8000/users/
+
+HTTP/1.0 200 OK
+Allow: GET, POST, HEAD, OPTIONS
+Content-Type: application/json
+Date: Tue, 28 Jun 2016 12:18:38 GMT
+Server: WSGIServer/0.1 Python/2.7.10
+Vary: Accept, Cookie
+X-Frame-Options: SAMEORIGIN
+
+[
+    {
+        "email": "admin@163.com",
+        "groups": [],
+        "url": "http://127.0.0.1:8000/users/2/",
+        "username": "admin"
+    },
+    {
+        "email": "86021111@163.com",
+        "groups": [],
+        "url": "http://127.0.0.1:8000/users/1/",
+        "username": "xuyiming"
+    }
+]
+```
+** 使用浏览器直接访问 **
+
+![testing][2]
+
+如果你的结果和以上一样，那么恭喜你，如果你先想要深入学习，你可以看接下来的教程或者API指南。
+
 
   [1]: http://askubuntu.com/questions/244641/how-to-set-up-and-use-a-virtual-python-environment-in-ubuntu
+  [2]: http://7xq2as.com1.z0.glb.clouddn.com/quickstart-test.png
