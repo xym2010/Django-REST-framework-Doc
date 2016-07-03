@@ -6,7 +6,7 @@
 * [安装](installation.md)
 * [快速入门](quickstart.md)
 * [教程](tutorial/readme.md)
-    * [待编辑...](tutorial/doing.md)
+    * [1.Serialization](tutorial/tutorial_1.md)
 * [API 指南](api_guide/readme.md)
     * [待编辑...](api_guide/doing.md)
 * [常见问题](topics.md)
